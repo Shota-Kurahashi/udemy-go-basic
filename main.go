@@ -1,12 +1,7 @@
 package main
 
-import "fmt"
+import modules "go-basics/00-modules"
 
 func main() {
-	fmt.Println("Hello, World!")
-	sl := []int{1, 2, 3}
-
-	if len(sl) > 2 {
-		fmt.Println(sl[0])
-	}
+	modules.Main()
 }
