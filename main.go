@@ -1,7 +1,18 @@
 package main
 
-import modules "go-basics/00-modules"
+import (
+	"fmt"
+	variables "go-basics/01-variables"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	modules.Main()
+	godotenv.Load()
+	fmt.Println(os.Getenv("GO_ENV"))
+
+	// modules.Main()   //* 00-modules
+
+	variables.Main() //* 01-variables
 }
