@@ -14,6 +14,8 @@ func main() {
 
 	go func() {
 		defer wg.Done()
+
+		// 受信操作が行われるまでブロックされる
 		ch <- 10
 		time.Sleep(500 * time.Millisecond)
 	}()
