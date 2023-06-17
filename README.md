@@ -28,3 +28,27 @@
 | function     | func(x int) int { return x \* x }               | 関数型は関数を表します。関数はゼロ個以上のパラメータを受け取り、ゼロ個以上の結果を返すことができます。                                                           |
 | interface    | interface { Read(b []byte) (n int, err error) } | インターフェース型はメソッドの集合を表します。任意の型は、その型がそのインターフェースの全てのメソッドを実装していれば、そのインターフェースを満たすと言います。 |
 | channel      | chan int                                        | チャネル型はゴルーチン間での通信を提供します。チャネルは特定の型の値の送受信を行います（例えば、chan int は int の値の送受信を行います）。                       |
+
+### printf format
+
+| コード                                                                                  | 結果                                                  |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `fmt.Printf("%v\n", 12345)`                                                             | 12345                                                 |
+| `fmt.Printf("%+v\n", struct{ X, Y int }{10, 20})`                                       | {X:10 Y:20}                                           |
+| `fmt.Printf("%#v\n", struct{ X, Y int }{10, 20})`                                       | struct { X int; Y int }{X:10, Y:20}                   |
+| `fmt.Printf("%T\n", 12345)`                                                             | int                                                   |
+| `fmt.Printf("%%\n")`                                                                    | %                                                     |
+| `fmt.Printf("%b\n", 12)`                                                                | 1100                                                  |
+| `fmt.Printf("%c\n", 65)`                                                                | A                                                     |
+| `fmt.Printf("%d\n", 12345)`                                                             | 12345                                                 |
+| `fmt.Printf("%e\n", 12345.0)`                                                           | 1.234500e+04                                          |
+| `fmt.Printf("%f\n", 12345.0)`                                                           | 12345.000000                                          |
+| `fmt.Printf("%g\n", 12345.0)`                                                           | 12345                                                 |
+| `fmt.Printf("%o\n", 12)`                                                                | 14                                                    |
+| `fmt.Printf("%p\n", &struct{ X, Y int }{10, 20})`                                       | 0x<address>                                           |
+| `fmt.Printf("%q\n", 'A')`                                                               | 'A'                                                   |
+| `fmt.Printf("%s\n", "Hello, world!")`                                                   | Hello, world!                                         |
+| `fmt.Printf("%t\n", true)`                                                              | true                                                  |
+| `fmt.Printf("%x\n", 255)`                                                               | ff                                                    |
+| `fmt.Printf("%X\n", 255)`                                                               | FF                                                    |
+| `fmt.Printf("The first argument is %[1]v, and the second is %[2]v.\n", 12345, "Hello")` | The first argument is 12345, and the second is Hello. |
