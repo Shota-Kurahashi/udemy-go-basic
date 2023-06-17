@@ -1,0 +1,2 @@
+Warning: 2023/06/17 11:33:21 main.go:23: Warning: This is a warning message
+Error: 2023/06/17 11:33:21 main.go:24: Error: This is an error message
